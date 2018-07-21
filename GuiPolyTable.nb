@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5888,        186]
-NotebookOptionsPosition[      5424,        166]
-NotebookOutlinePosition[      5768,        181]
-CellTagsIndexPosition[      5725,        178]
+NotebookDataLength[      6078,        192]
+NotebookOptionsPosition[      5567,        171]
+NotebookOutlinePosition[      5910,        186]
+CellTagsIndexPosition[      5867,        183]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -110,8 +110,6 @@ Cell[BoxData[
          RowBox[{"1", ",", "0"}], "}"}], ",", "var"}], "]"}]}], "}"}]}], 
    "]"}]}]], "Input"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"CreateDialog", "[", 
   RowBox[{
@@ -156,16 +154,23 @@ Cell[BoxData[
      RowBox[{"Alignment", "\[Rule]", " ", "Left"}]}], "]"}], ",", 
    RowBox[{"Modal", "\[Rule]", " ", "True"}]}], "]"}]], "Input"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  TemplateBox[{FrontEndObject[
     LinkObject["w92rs_shm", 3, 1]],45,
    "FrontEndObject[LinkObject[\"w92rs_shm\", 3, 1]]","45","45"},
-  "NotebookObjectUnsaved"]], "Output",
- CellChangeTimes->{3.6683531764488106`*^9, 3.6683532105022707`*^9}]
+  "NotebookObjectUnsaved"]], "Input",
+ CellChangeTimes->{3.683819168666154*^9}],
+
+Cell[BoxData[
+ TemplateBox[{"FrontEndObject[LinkObject[\"w92rs_shm\", 3, 1]]","45"},
+  "NotebookObjectMissing"]], "Output",
+ CellChangeTimes->{3.6838191686991615`*^9}]
 }, Open  ]]
 },
 WindowSize->{1920, 997},
-WindowMargins->{{Automatic, 1912}, {Automatic, -8}},
+WindowMargins->{{Automatic, 1912}, {Automatic, 0}},
 FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -184,9 +189,10 @@ Cell[558, 20, 72, 1, 31, "Input"],
 Cell[633, 23, 619, 19, 72, "Input"],
 Cell[1255, 44, 1109, 33, 52, "Input"],
 Cell[2367, 79, 997, 31, 52, "Input"],
+Cell[3367, 112, 1762, 42, 92, "Input"],
 Cell[CellGroupData[{
-Cell[3389, 114, 1762, 42, 92, "Input"],
-Cell[5154, 158, 254, 5, 48, "Output"]
+Cell[5154, 158, 227, 5, 48, InheritFromParent],
+Cell[5384, 165, 167, 3, 81, "Output"]
 }, Open  ]]
 }
 ]

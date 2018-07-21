@@ -1,0 +1,222 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6960,        212]
+NotebookOptionsPosition[      6647,        196]
+NotebookOutlinePosition[      6990,        211]
+CellTagsIndexPosition[      6947,        208]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Adaptive", " ", "Simpson"}], "*)"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"Simpson", " ", "is", " ", "more", " ", "difficult"}], ",", 
+    RowBox[{"we", " ", "will", " ", "use", " ", "modules"}], ",", 
+    RowBox[{"this", " ", "is", " ", "example", " ", "of", " ", "using", " ", 
+     RowBox[{"Simpson", "'"}], "s", " ", "recursively"}]}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Simps", "[", 
+     RowBox[{"f_", ",", "a_", ",", "b_", ",", "er_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"s1", ",", "s2", ",", "h2", ",", 
+        RowBox[{"h", "=", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"b", "-", "a"}], ")"}], "/", "2"}]}]}], "}"}], ",", 
+      RowBox[{
+       RowBox[{"h", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"b", "-", "a"}], ")"}], "/", "2"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"s1", "=", 
+        RowBox[{"h", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"f", "[", "a", "]"}], "+", 
+           RowBox[{"4", " ", 
+            RowBox[{"f", "[", 
+             RowBox[{"a", "+", "h"}], "]"}]}], "+", 
+           RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"h2", "=", 
+        RowBox[{"h", "/", "2"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"s2", "=", 
+        RowBox[{"h2", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"f", "[", "a", "]"}], "+", 
+           RowBox[{"4", " ", 
+            RowBox[{"f", "[", 
+             RowBox[{"a", "+", "h2"}], "]"}]}], "+", 
+           RowBox[{"2", " ", 
+            RowBox[{"f", "[", 
+             RowBox[{"a", "+", "h"}], "]"}]}], "+", 
+           RowBox[{"4", " ", 
+            RowBox[{"f", "[", 
+             RowBox[{"b", "-", "h2"}], "]"}]}], "+", 
+           RowBox[{"f", "[", "b", "]"}]}], ")"}]}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"Abs", "[", 
+            RowBox[{"s2", "-", "s1"}], "]"}], "/", "45"}], "<", "er"}], ",", 
+         RowBox[{
+          RowBox[{"s2", "/", "3"}], "+", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"s2", "-", "s1"}], ")"}], "/", "45"}]}], ",", 
+         RowBox[{
+          RowBox[{"Simps", "[", 
+           RowBox[{"f", ",", "a", ",", 
+            RowBox[{"a", "+", "h"}], ",", 
+            RowBox[{"er", "/", "2"}]}], "]"}], "+", 
+          RowBox[{"Simps", "[", 
+           RowBox[{"f", ",", 
+            RowBox[{"a", "+", "h"}], ",", "b", ",", 
+            RowBox[{"er", "/", "2"}]}], "]"}]}]}], "]"}]}]}], "]"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Cos", "[", "x", "]"}], ",", "0.", ",", 
+     RowBox[{"Pi", "/", "2"}], ",", 
+     RowBox[{"ans", ":", "1."}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"x", "^", "2"}], ",", "0.", ",", "1", ",", 
+     RowBox[{"ans", ":"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"1", "/", "x"}], ",", "1.", ",", "2", ",", 
+     RowBox[{"ans", ":"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"E", "^", 
+      RowBox[{"(", 
+       RowBox[{"-", 
+        RowBox[{"x", "^", "2"}]}], ")"}]}], ",", "0.", ",", "1", ",", 
+     RowBox[{"ans", ":", "0.746824"}]}], "*)"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"g", "[", "x_", "]"}], ":=", 
+      RowBox[{"E", "^", 
+       RowBox[{"(", 
+        RowBox[{"-", 
+         RowBox[{"x", "^", "2"}]}], ")"}]}]}], ";"}], 
+    RowBox[{"(*", 
+     RowBox[{
+     "start", " ", "with", " ", "a", " ", "nice", " ", "function", " ", 
+      "should", " ", "be", " ", "1"}], "*)"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g", "[", "x_", "]"}], ":=", 
+    RowBox[{"1.", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Sin", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"51.", " ", "Pi"}], ")"}], "/", "360."}], "]"}], "^", 
+           "2"}], " ", 
+          RowBox[{
+           RowBox[{"Sin", "[", "x", "]"}], "^", "2"}]}]}], ")"}], "^", 
+       RowBox[{"(", 
+        RowBox[{"1", "/", "2"}], ")"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"h", "[", "x_", "]"}], ":=", 
+      RowBox[{"x", "^", "2"}]}], ";"}], 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"for", " ", 
+       RowBox[{"x", "^", "2"}]}], ",", 
+      RowBox[{"since", " ", "error", " ", "starts", " ", "with", " ", "0"}], 
+      ",", 
+      RowBox[{
+       RowBox[{"we", " ", "expect"}], "..."}]}], "*)"}], "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a", "=", "0."}], ";", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{
+      "decimal", " ", "so", " ", "that", " ", "everything", " ", "is", " ", 
+       "done", " ", "in", " ", "floating"}], "-", "point"}], "*)"}], 
+    RowBox[{"b", "=", 
+     RowBox[{"Pi", "/", "2."}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"error", "=", 
+     RowBox[{"10", "^", 
+      RowBox[{"-", "6"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"ask", " ", "why", " ", "we", " ", "subtract", " ", 
+     RowBox[{"Log", "[", "2.", "]"}], " ", "when", " ", "evaluating", " ", 
+     RowBox[{"1", "/", "x"}]}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"4", "*", 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{".4", "/", "9.8"}], "]"}], "*", 
+    RowBox[{"(", 
+     RowBox[{"1", "/", 
+      RowBox[{"Sqrt", "[", "2", "]"}]}], ")"}], "*", 
+    RowBox[{"Simps", "[", 
+     RowBox[{"g", ",", "a", ",", "b", ",", "error"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.690771684917572*^9, 3.6907716849180727`*^9}}],
+
+Cell[BoxData["0.9441753340803477`"], "Output",
+ CellChangeTimes->{3.690771687073387*^9}]
+}, Open  ]]
+},
+WindowSize->{745, 826},
+WindowMargins->{{Automatic, 496}, {-29, Automatic}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5960, 168, 512, "Input"],
+Cell[6543, 192, 88, 1, 64, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

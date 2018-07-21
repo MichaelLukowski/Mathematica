@@ -1,0 +1,225 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8326,        216]
+NotebookOptionsPosition[      7861,        195]
+NotebookOutlinePosition[      8203,        210]
+CellTagsIndexPosition[      8160,        207]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"A", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "3"}], ",", 
+        RowBox[{"-", "9"}], ",", 
+        RowBox[{"-", "10"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6", ",", "9", ",", "1", ",", "6"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{"-", "1"}], ",", "1", ",", 
+        RowBox[{"-", "4"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2", ",", "0", ",", 
+        RowBox[{"-", "8"}], ",", 
+        RowBox[{"-", "3"}]}], "}"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{"MatrixForm", "[", "A", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"x", " ", "=", " ", 
+   RowBox[{"Eigenvalues", "[", 
+    RowBox[{"A", ",", "1", ",", " ", 
+     RowBox[{"Quartics", "\[Rule]", "True"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<The Largest Eigenvalue of the Matrix A by Mathematica Functions is: \>\
+\"", " ", ",", " ", 
+   RowBox[{"x", "//", "N"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{"1", ",", "4"}], "]"}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "100"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"u", "=", 
+     RowBox[{
+      RowBox[{"A", ".", "u"}], "/", 
+      RowBox[{"u", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+  "\"\<The largest Eigenvalue of A using the power method over 100 \
+itterations is: \>\"", ",", 
+   RowBox[{
+    RowBox[{"u", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], "//", "N"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  "\"\<They are nearly identical at this itteration point\>\"", 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6896826065102425`*^9, 3.689682606511244*^9}, {
+  3.6896827311380053`*^9, 3.6896827317349234`*^9}, {3.689683101978882*^9, 
+  3.6896831021546516`*^9}, {3.68968314745232*^9, 3.6896831642506585`*^9}, {
+  3.6896834362112136`*^9, 3.6896834918432894`*^9}, {3.689683646707799*^9, 
+  3.6896836584037895`*^9}, {3.689683732579465*^9, 3.689683733868948*^9}, {
+  3.689683776827531*^9, 3.689683812020162*^9}, {3.689683889523877*^9, 
+  3.6896839134340754`*^9}, {3.689684093252035*^9, 3.6896841024997597`*^9}, {
+  3.6896842672046757`*^9, 3.689684280684413*^9}, {3.6896843918847456`*^9, 
+  3.689684446772173*^9}, {3.689684585421442*^9, 3.6896846294606805`*^9}, {
+  3.6896848128056974`*^9, 3.689685089244917*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "2"}], 
+      RowBox[{"-", "3"}], 
+      RowBox[{"-", "9"}], 
+      RowBox[{"-", "10"}]},
+     {"6", "9", "1", "6"},
+     {
+      RowBox[{"-", "6"}], 
+      RowBox[{"-", "1"}], "1", 
+      RowBox[{"-", "4"}]},
+     {"2", "0", 
+      RowBox[{"-", "8"}], 
+      RowBox[{"-", "3"}]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.6896826087376685`*^9, 3.689683103093596*^9, 3.6896831659527764`*^9, 
+   3.6896834929414787`*^9, {3.6896836484144244`*^9, 3.689683658717271*^9}, 
+   3.68968374612731*^9, {3.689683793871748*^9, 3.689683812286572*^9}, {
+   3.689683892814439*^9, 3.6896839140540285`*^9}, {3.689684094600109*^9, 
+   3.6896841030566163`*^9}, {3.6896842735359144`*^9, 3.689684281397009*^9}, {
+   3.6896843940300455`*^9, 3.6896844473590755`*^9}, {3.6896845914957857`*^9, 
+   3.689684605480296*^9}, {3.6896848063437586`*^9, 3.689684818057275*^9}, {
+   3.6896848794872675`*^9, 3.6896849112801685`*^9}, {3.6896849433760395`*^9, 
+   3.6896849584872828`*^9}, {3.6896849952648544`*^9, 3.689685047183215*^9}, 
+   3.689685089544378*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Largest Eigenvalue of the Matrix A by Mathematica \
+Functions is: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"-", "10.386359195266106`"}], "}"}]}],
+  SequenceForm[
+  "The Largest Eigenvalue of the Matrix A by Mathematica Functions is: ", \
+{-10.386359195266106`}],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6896831031001062`*^9, 3.689683165957784*^9, 3.6896834929439826`*^9, {
+   3.6896836484184303`*^9, 3.689683658723281*^9}, 3.689683746163866*^9, {
+   3.689683793942356*^9, 3.6896838123176193`*^9}, {3.6896838928930597`*^9, 
+   3.689683914084075*^9}, {3.6896840946306553`*^9, 3.6896841030866623`*^9}, {
+   3.689684273567463*^9, 3.6896842814025173`*^9}, {3.6896843940335507`*^9, 
+   3.689684447363082*^9}, {3.6896845914987907`*^9, 3.6896846054888086`*^9}, {
+   3.6896848063472633`*^9, 3.68968481806028*^9}, {3.689684879497783*^9, 
+   3.689684911282673*^9}, {3.6896849433780427`*^9, 3.689684958489786*^9}, {
+   3.689684995266858*^9, 3.6896850471862197`*^9}, 3.6896850895473824`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The largest Eigenvalue of A using the power method over 100 \
+itterations is: \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "10.386359195266106`"}]}],
+  SequenceForm[
+  "The largest Eigenvalue of A using the power method over 100 itterations \
+is: ", -10.386359195266106`],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.6896831031001062`*^9, 3.689683165957784*^9, 3.6896834929439826`*^9, {
+   3.6896836484184303`*^9, 3.689683658723281*^9}, 3.689683746163866*^9, {
+   3.689683793942356*^9, 3.6896838123176193`*^9}, {3.6896838928930597`*^9, 
+   3.689683914084075*^9}, {3.6896840946306553`*^9, 3.6896841030866623`*^9}, {
+   3.689684273567463*^9, 3.6896842814025173`*^9}, {3.6896843940335507`*^9, 
+   3.689684447363082*^9}, {3.6896845914987907`*^9, 3.6896846054888086`*^9}, {
+   3.6896848063472633`*^9, 3.68968481806028*^9}, {3.689684879497783*^9, 
+   3.689684911282673*^9}, {3.6896849433780427`*^9, 3.689684958489786*^9}, {
+   3.689684995266858*^9, 3.6896850471862197`*^9}, 3.68968508955239*^9}],
+
+Cell[BoxData["\<\"They are nearly identical at this itteration point\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.6896831031001062`*^9, 3.689683165957784*^9, 3.6896834929439826`*^9, {
+   3.6896836484184303`*^9, 3.689683658723281*^9}, 3.689683746163866*^9, {
+   3.689683793942356*^9, 3.6896838123176193`*^9}, {3.6896838928930597`*^9, 
+   3.689683914084075*^9}, {3.6896840946306553`*^9, 3.6896841030866623`*^9}, {
+   3.689684273567463*^9, 3.6896842814025173`*^9}, {3.6896843940335507`*^9, 
+   3.689684447363082*^9}, {3.6896845914987907`*^9, 3.6896846054888086`*^9}, {
+   3.6896848063472633`*^9, 3.68968481806028*^9}, {3.689684879497783*^9, 
+   3.689684911282673*^9}, {3.6896849433780427`*^9, 3.689684958489786*^9}, {
+   3.689684995266858*^9, 3.6896850471862197`*^9}, 3.689685089553892*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 997},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.2 for Microsoft Windows (64-bit) (July 7, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2739, 72, 252, "Input"],
+Cell[3322, 96, 1586, 39, 86, "Output"],
+Cell[CellGroupData[{
+Cell[4933, 139, 1062, 19, 23, "Print"],
+Cell[5998, 160, 1048, 18, 23, "Print"],
+Cell[7049, 180, 784, 11, 23, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
